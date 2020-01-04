@@ -140,6 +140,20 @@ t表示“扩张”倍数，c表示输出通道数，n表示重复次数，s表�
 
 相比于不同深度的模型对比，可以看到ShuffleNet要比MobileNet的效果要好，这表明ShuffleNet的有效性主要来源于高效的结构设计，而不是深度。ShuffleNet的效果要比同等条件下的MobileNet效果要好，我们认为收益源于ShuffleNet的设计。
 
+#### 逐点群卷积有用吗？
+
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200104-192936.png)
+
+1. 从结果来看，有组卷积的一致比没有组卷积(g=1 )的效果要好。注意组卷积可允许获得更多通道的信息，我们假设性能的收益源于更宽的特征映射，这帮助我们编码更多信息。并且，较小的模型的特征映射通道更少，这意味着能多的从特征映射上获取收益。
+2. 对于一些模型，随着g 增大，性能上有所下降。意味组数增加，每个卷积滤波器的输入通道越来越少，损害了模型表示能力。
+3. 对于小型的ShuffleNet 0.25×，组数越大性能越好，这表明对于小模型更宽的特征映射更有效。
+
+#### channel shuffle 有用吗？
+
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200104-193516.png)
+
+在三个不同复杂度下带Shuffle的都表现出更优异的性能，尤其是当组更大(arch2,g=8)，具有shuffle操作性能提升较多，这表现出Shuffle操作的重要性。
+
 ### v2版本
 
 **认为FLOPs并不能完全衡量模型速度！**
