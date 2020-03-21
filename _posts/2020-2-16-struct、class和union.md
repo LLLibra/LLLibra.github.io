@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "struct、class和union"
 data: 星期日, 16. 二月 2020 03:04下午 
@@ -16,11 +16,11 @@ tags: 专题
 
 #### 定义： 
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160016.png)
+![](imgs/20200216-160016.png)
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160054.png)
+![](imgs/20200216-160054.png)
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160105.png)
+![](imgs/20200216-160105.png)
 
 #### 注意
 
@@ -48,7 +48,7 @@ tags: 专题
 
 匿名union不能包含受保护的成员或私有成员，也不能定义成员函数。
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-154334.png)
+![](imgs/20200216-154334.png)
 
 #### union的作用： 
 
@@ -56,19 +56,7 @@ union提供了一种有效的途径使得我们可以方便地表示一组数据
 
 当多个基本数据类型或复合数据结构要占用同一片内存时，我们要使用union；当多种类型，多个对象，多个事物只取其一时（我们姑且通俗地称其为“n 选1”），我们也可以使用联合体来发挥其长处。
 
-##内存对齐
-#### struct
-** 偏移量: **数据成员的起始地址相对于数据结构起始地址的字节偏移量. 
 
-1.对于结构体的各个成员，第一个成员的偏移量是0，排列在后面的成员其当前偏移量必须是当前成员类型的整数倍
-
-2.结构体内所有数据成员各自内存对齐后，结构体本身还要进行一次内存对齐，保证整个结构体占用内存大小是结构体内最大数据成员的最小整数倍
-
-3.如程序中有#pragma pack(n)预编译指令，则所有成员对齐以n字节为准(即偏移量是n的整数倍)，不再考虑当前类型以及最大结构体内类型
-
-参考：https://blog.csdn.net/weixin_41533956/article/details/101319903
-
-#### class暂时认为同strcut
 
 ## struct与class的其他区别（两者区别很小）
 

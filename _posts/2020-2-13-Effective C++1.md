@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "Effective C++ (1)"
 data: 星期四, 13. 二月 2020 10:41上午 
@@ -24,7 +24,7 @@ A可能未被编译器看到或者编译器开始处理源码之前它就被预�
 
 ** 优点1：**有时候你定义一个变量想当作数组大小，但是报错不允许 static整数型class常量完成。课用enum代替。
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-094646.png)
+![](imgs/20200213-094646.png)
 
 ** 优点2： ** 定义会比较清楚
 
@@ -36,13 +36,13 @@ A可能未被编译器看到或者编译器开始处理源码之前它就被预�
  
 同时使用#define 定义宏常常会出现一些不合理的问题
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-094837.png)
+![](imgs/20200213-094837.png)
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-094844.png)
+![](imgs/20200213-094844.png)
 
 而使用inline则不会
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-094825.png)
+![](imgs/20200213-094825.png)
 
 ## 条款3： 尽可能使用const
 ** 优点1： **声明const可以帮助编译器侦测错误用法，避免改变不应改变的对象、参数、返回类型等。
@@ -62,14 +62,14 @@ A::A(int _a){a=_a} //赋值构造
 >
 ** 编译单元： ** 一般认为是一个源文件和其对应的头文件，但是编译器只会编译源文件，所以每一个cpp 文件就是一个编译单元，多个编译单元间的初始化顺序往往是不确定的。
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-103028.png)
+![](imgs/20200213-103028.png)
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-103034.png)
+![](imgs/20200213-103034.png)
 
 >
   上面的tfs并不能保证在Directory之前初始化，所以改成下面的情况，注意：tfs（FileSystem）和Directory分属两个编译单元。 
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200213-103047.png)
+![](imgs/20200213-103047.png)
 
 这个例子一是提醒大家注意确定对象被使用前已先被初始化，二是提供一种对于这种情况的处理思路。
 

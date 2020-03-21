@@ -99,77 +99,77 @@ Adaboost的关键
 
 #### 特征选择
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153330.png)
+![](imgs/20200311-153330.png)
 
-一共有N个训练样本，其中![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153353.png)为决策树判断结果，只有二分类，输出-1或者1，![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153433.png)为第i个样本在m轮迭代的数据权重。
+一共有N个训练样本，其中![](imgs/20200311-153353.png)为决策树判断结果，只有二分类，输出-1或者1，![](imgs/20200311-153433.png)为第i个样本在m轮迭代的数据权重。
 
 #### 分类器权重计算
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153521.png)
+![](imgs/20200311-153521.png)
 > #### 分类器权重公式推导
 >
 ** 损失函数 **
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-183250.png)
+![](imgs/20200311-183250.png)
 >
 ** 推导 **
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-183354.png)
+![](imgs/20200311-183354.png)
 >
 ** 其中 **
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-221109.png)
+![](imgs/20200311-221109.png)
 >>
 但是的推导过程是
 >>
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-221634.png)
+![](imgs/20200311-221634.png)
 >>
 可以推出
 >>
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-221250.png)
+![](imgs/20200311-221250.png)
 >>
 对比W公式
 >>
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-221320.png)
+![](imgs/20200311-221320.png)
 >>
 其中Z只是一个归一化的因素，也就是说如果将![](imgs/20200311-221432.png)归一化了和![](imgs/20200311-221457.png)是一样的。
 >>
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-221432.png)和![](imgs/20200311-221523.png)是一个东西
+![](imgs/20200311-221432.png)和![](imgs/20200311-221523.png)是一个东西
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-183527.png)
+![](imgs/20200311-183527.png)
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-184018.png)
+![](imgs/20200311-184018.png)
 
 #### 数据权重更新
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153641.png)
+![](imgs/20200311-153641.png)
 
 #### 预测结果
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-153701.png)
+![](imgs/20200311-153701.png)
 
 ### Adaboost的正则化
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-185536.png)
+![](imgs/20200311-185536.png)
 
 ### Adaboost的回归问题
 毫无疑问这里需要将基分类器改为CART回归树
 > #### 特征选择
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161330.png)
+![](imgs/20200311-161330.png)
 
 > 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-163314.png)
+![](imgs/20200311-163314.png)
 > #### 分类器权重计算
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161525.png)
+![](imgs/20200311-161525.png)
 
 > #### 数据权重更新
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161539.png)
+![](imgs/20200311-161539.png)
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161627.png)
+![](imgs/20200311-161627.png)
 > #### 预测结果
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161749.png)
+![](imgs/20200311-161749.png)
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200311-161846.png)
+![](imgs/20200311-161846.png)
 
 ### Adaboost的优缺点
 

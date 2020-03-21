@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "逻辑回归"
 data: 星期二, 10. 三月 2020 04:56下午 
@@ -20,20 +20,20 @@ tags: 专题
 
 ### 问题定义
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-170721.png)
+![](imgs/20200310-170721.png)
 
 这里应该是 z=wx
 #### 损失函数
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-170737.png)
+![](imgs/20200310-170737.png)
 
 
 ### 求导过程
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-171049.png)
+![](imgs/20200310-171049.png)
 
 其中alpha为学习率
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-183603.png)
+![](imgs/20200310-183603.png)
 
 ### 逻辑回归的多分类
 
@@ -59,11 +59,11 @@ tags: 专题
 
 6、如果新质心和原质心距离变化很大，需要迭代3~5步骤。
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-184507.png)
+![](imgs/20200310-184507.png)
 
 #### 距离选择
 
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-184540.png)
+![](imgs/20200310-184540.png)
 
 ### kmeans的优缺点
 
@@ -90,9 +90,9 @@ tags: 专题
 #### K值的确定
 
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-185747.png)
+![](imgs/20200310-185747.png)
 >
-![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200310-185804.png)
+![](imgs/20200310-185804.png)
 
 #### 初始质心的确定（kmeans++）
 由于 K-means 算法的分类结果会受到初始点的选取而有所区别，因此有提出这种算法的改进: K-means++ 。
