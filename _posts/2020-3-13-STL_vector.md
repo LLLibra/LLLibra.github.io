@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "STL - vector"
 data: 星期四, 12. 三月 2020 03:42下午 
@@ -125,7 +125,7 @@ b为另外一个vector
 >
 使用swap释放内存
 >
-![](imgs/20200313-181318.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200313-181318.png)
 
 
 ==判断相等
@@ -133,7 +133,7 @@ b为另外一个vector
 ## vector原理简单分析（只知道地层是动态数组，其他的暂不确定）
 主要是依靠三个指针
 
-![](imgs/20200313-144651.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200313-144651.png)
 
 size表示vector中已有元素的个数，容量表示vector最多可存储的元素的个数。
 

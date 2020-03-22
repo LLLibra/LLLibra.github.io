@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "经典模型Faster-RCNN介绍"
 data: 星期二, 17. 三月 2020 03:48下午 
@@ -13,13 +13,13 @@ tags: 经典模型
 * Faster-RCNN做为一个经典模型，单论模型效果在当年还是很惊艳的，但是速度过慢。本篇博文需要对faster-RCNN有一定的了解，并不会讲解很基础的东西，比如9个anchor是什么
 
 ##网络结构
-![](imgs/20200317-155605.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200317-155605.png)
 
 
 ####模型根据上面的红框大致可以分为三个部分为会一一介绍
 
 ##模型输入与输出
-![](imgs/20200317-155709.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200317-155709.png)
 
 ####我们这里假设输入的数据为[20,M,N,3]
 
@@ -31,7 +31,7 @@ Faster R-CNN 是采用 VGG16 的中间卷积层的输出（即全连接之前的
 
 如果是ResNet就是下面这样
 
-![](imgs/20200318-093417.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-093417.png)
 
 ##模块二：RPN网络
 #### 模块输入 [20,H,W,512]
@@ -63,7 +63,7 @@ Faster R-CNN 是采用 VGG16 的中间卷积层的输出（即全连接之前的
 >
 其实这里回归的输出只是相对与anchor的偏移量，而我们在这一步需要将这些偏移量附加到anchor上面，使anchor变为proposal。
 >
-![](imgs/20200317-233802.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200317-233802.png)
 >
 其中tx,ty,tw,th就是我们的预测值(偏移量)，xa表示anchor box的中心点的x值，而图中的x,y,w,h则是我们要转化的proposal的值，其实就是将我们设定好的anchor和回归求出来的偏移量转化为真实的预测框(proposal)
 
@@ -105,7 +105,7 @@ VGG16最后一层得到的feature map[20,H,W,512]
 4.每个2x2的小区域里，取出其中最大的像素值，作为这一个区域的‘代表’，这样，49个小区域就输出49个像素值，组成7x7大小的feature map
 
 ##模块四：分类与回归网络
-![](imgs/20200317-162051.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200317-162051.png)
 
 一共分80类，上面为回归，下面为分类
 
@@ -128,11 +128,11 @@ VGG16最后一层得到的feature map[20,H,W,512]
 
 损失值有两个部分，回归损失和分类损失
 
-![](imgs/20200318-093803.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-093803.png)
 
 #### 找个每个ground truth的对应的proposal
 
-![](imgs/20200318-101123.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-101123.png)
 
 negative label（负标签）：与所有GT包围盒的IoU都小于0.3的anchor。
 
@@ -146,20 +146,20 @@ negative label（负标签）：与所有GT包围盒的IoU都小于0.3的anchor�
 ####分类损失
 有一点我们需要注意，我们在RPN层只输出了是否有物体，而在最终输出层不仅输出了是否有物体，而且还输出了有什么物体。
 
-![](imgs/20200318-094042.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-094042.png)
 
 或者是交叉熵损失函数
 
-![](imgs/20200318-094845.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-094845.png)
 
 >
 被丢弃的样本样本不会计算分类损失
 
 ####回归损失
 
-![](imgs/20200318-093633.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-093633.png)
 
-![](imgs/20200318-093641.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-093641.png)
 
 >
 正样本才计算回归损失,负样本和被丢弃的样本都不会计算回归损失
@@ -172,7 +172,7 @@ negative label（负标签）：与所有GT包围盒的IoU都小于0.3的anchor�
 
 ####RCNN解决的是，“为什么不用CNN做classification呢？”
 
-![](imgs/20200318-111728.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-111728.png)
 
 基于启发式的区域提取方法，用的方法是ss，查看现有的小区域，合并两个最有可能的区域，重复此步骤，直到图像合并为一个区域，最后输出候选区域。然后将根据建议提取的目标图像标准化，作为CNN的标准输入可以看作窗口通过滑动获得潜在的目标图像，在RCNN中一般Candidate选项为1k~2k个即可
 
@@ -187,7 +187,7 @@ negative label（负标签）：与所有GT包围盒的IoU都小于0.3的anchor�
 
 ####Fast R-CNN解决的是，“为什么不一起输出bounding box和label呢？”
 
-![](imgs/20200318-111423.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-111423.png)
 
 Fast RCNN与RCNN不同。其不同之处如下：Fast RCNN在数据的输入上并不对其有什么限制，而实现这一没有限制的关键所在正是ROI Pooling层。该层的作用是可以在任何大小的特征映射上为每个输入ROI区域提取固定的维度特征表示，解决了第三个缺点
 

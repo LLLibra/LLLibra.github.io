@@ -16,11 +16,11 @@ tags: 专题
 
 #### 定义： 
 
-![](imgs/20200216-160016.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160016.png)
 
-![](imgs/20200216-160054.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160054.png)
 
-![](imgs/20200216-160105.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-160105.png)
 
 #### 注意
 
@@ -48,7 +48,7 @@ tags: 专题
 
 匿名union不能包含受保护的成员或私有成员，也不能定义成员函数。
 
-![](imgs/20200216-154334.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200216-154334.png)
 
 #### union的作用： 
 

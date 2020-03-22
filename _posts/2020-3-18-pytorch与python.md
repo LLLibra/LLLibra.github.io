@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title:  "经典思想FPN介绍"
 data: 星期三, 18. 三月 2020 03:09下午 
@@ -18,11 +18,11 @@ FPN主要解决的是物体检测中的多尺度问题，通过简单的网络�
 FPN更像是一种思想，用这个思想优化的faster-RCNN
 
 ##网络结构
-![](imgs/20200318-152031.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-152031.png)
 
-![](imgs/20200318-152329.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-152329.png)
 
-![](imgs/20200318-153438.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-153438.png)
 
 ##anchor
 对于anchor原本faster-rcnn会采用多尺度加多比例，但是FPN已经考虑了多尺度了，所以只要考虑多比例就行，每一个RPN的一个点只有三个anchor。
@@ -33,7 +33,7 @@ FPN更像是一种思想，用这个思想优化的faster-RCNN
 
 1.采用类似fig1种的b结构，但是将其他层的特征通过3x3/1x1卷积进行叠加到最高层作为特征输出，因为不同特征层之间存在着semantic gap，从而效果不好
 >
-![](imgs/20200318-154148.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200318-154148.png)
 
 2.采用top-down金字塔，但是不尽兴lateral相加操作，虽然分辨率也提高了，但是由于没有和对应层的特征信息，从而位置精度不够
 
