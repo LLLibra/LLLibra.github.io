@@ -162,6 +162,15 @@ vector的析构函数很简单，就是先销毁所有已存在的元素，然�
 
 数组 > 动态数组 > 预先reverse的vector > vector
 
+
+## vector删除元素
+注意两点
+
+1.erase(iter)会自动将iter指向你要删除的元素的下一个元素的位置。
+
+2.最好写成iter=vt.erase(iter)
+
+
 ## C++中为什么要用vector代替数组
 1.编译器和运行时系统都不会检查数组下标是否位于正确的范围之内；
 
@@ -172,3 +181,5 @@ vector的析构函数很简单，就是先销毁所有已存在的元素，然�
 为什么vector的效率低于数组，即使预分配了空间。
 
 如果删掉了vector尾部的元素 那么尾部的迭代器属于什么
+
+iter=vt.erase(iter)和 vt.erase(iter) 什么区别
