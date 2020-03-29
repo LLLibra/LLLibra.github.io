@@ -80,6 +80,9 @@ iterator erase(iterator first, iterator last);
 
 pop_back();返回尾元素
 
+> #### remove
+vector中的remove的作用是将等于value的元素放到vector的尾部，但并不减少vector的size
+
 #### 初始化
 **方法一：**
 >
@@ -157,6 +160,10 @@ vector优异性能的秘诀之一，就是配置比其所容纳的元素所需�
 ## vector的析构
 vector的析构函数很简单，就是先销毁所有已存在的元素，然后释放所有内存
 
+## 如何避免扩容
+就是需要事先分配足够的空间，然后可以 调用shrink_to_fit()，capacity会缩小到合适大小
+
+或者vector< int >(ivec).swap(ivec);
 
 ## vector和数组的效率
 
