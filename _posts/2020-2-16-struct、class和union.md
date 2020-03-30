@@ -90,6 +90,8 @@ union提供了一种有效的途径使得我们可以方便地表示一组数据
 
 5）地址操作符，  如果没有定义
 
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200330-141834.png)
+
 ## 结构体的位域
 
 是C语言中的概念
