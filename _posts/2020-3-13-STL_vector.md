@@ -160,6 +160,10 @@ vector优异性能的秘诀之一，就是配置比其所容纳的元素所需�
 ## vector的析构
 vector的析构函数很简单，就是先销毁所有已存在的元素，然后释放所有内存
 
+vector的clear会清除所有内容，size会为0,但是capacity仍旧保持不变，内存并没有释放
+
+正确的释放方法：pointVec.swap(vector< Point > ())
+
 ## 如何避免扩容
 就是需要事先分配足够的空间，然后可以 调用shrink_to_fit()，capacity会缩小到合适大小
 

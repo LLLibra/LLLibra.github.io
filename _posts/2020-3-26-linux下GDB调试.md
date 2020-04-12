@@ -20,7 +20,7 @@ gdb test
 
 也可以先进gdb再加载文件 
 
-![](imgs/20200331-174117.png)
+![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200331-174117.png)
 
 
 **shell clear** 
