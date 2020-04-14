@@ -206,6 +206,8 @@ Array相当于vector和数组的结合体，但是和vector更像一些。
 
 array的空间在栈上
 
+## vector源码参考
+https://github.com/lnishan/vector/blob/master/vector.hpp#L8
 
 ## 残留问题：
 为什么vector的效率低于数组，即使预分配了空间。
