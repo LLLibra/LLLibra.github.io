@@ -93,6 +93,10 @@ union提供了一种有效的途径使得我们可以方便地表示一组数据
 ![](https://github.com/LLLibra/LLLibra.github.io/raw/master/_posts/imgs/20200330-141834.png)
 
 
+## 构造函数初始化列表中成员变量必须初始化的几种情况
+1.没有默认构造函数的基类
+
+2.引用成员变量
 
 ## 结构体的位域
 
